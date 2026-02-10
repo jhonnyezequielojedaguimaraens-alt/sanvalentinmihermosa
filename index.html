@@ -136,7 +136,19 @@ button:hover{
 function mostrarMensaje(){
     const texto = document.getElementById("mensaje").value;
     document.getElementById("resultado").innerText = texto;
+}/* leer mensaje desde el link */
+window.onload = function() {
+const params = new URLSearchParams(window.location.search);
+const mensaje = params.get("m");
+
+```
+if(mensaje){
+    document.getElementById("resultado").innerText = decodeURIComponent(mensaje);
 }
+```
+
+};
+
 
 /* crear corazones */
 function crearCorazon(){
@@ -158,4 +170,5 @@ setInterval(crearCorazon, 250);
 
 </body>
 </html>
+
 
